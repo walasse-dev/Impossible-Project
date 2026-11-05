@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -22,7 +21,7 @@ public class Product {
     private int stockQuantity;
 
     public Product(String name, String description, BigDecimal price, int stockQuantity) {
-        if (name == null || name.isBlank() || stockQuantity < 0 || price.compareTo(BigDecimal.ZERO) <= 0 || price == null) {
+        if (name == null || name.isBlank() || stockQuantity < 0 || price == null || price.compareTo(BigDecimal.ZERO) <= 0) {
             throw  new IllegalArgumentException("Error in Product instantiation.");
         }
 
