@@ -18,7 +18,11 @@ public class SecurityConfig {
                         .requestMatchers(
                                 HttpMethod.GET,
                                 "/api/v1/products",
-                                "/api/v1/products/{id}")
+                                "/api/v1/products/{id}",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs",
+                                "/v3/api-docs/**")
                         .permitAll()
                         .anyRequest().authenticated()
                 )
